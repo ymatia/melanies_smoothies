@@ -23,7 +23,7 @@ if ingredients_list:
         search_on=pd_df.loc[pd_df['FRUIT_NAME'] == fruit_chosen, 'SEARCH_ON'].iloc[0]
 
         smoothiefroot_response = requests.get(f"https://my.smoothiefroot.com/api/fruit/{search_on}")
-        st.subheader(f"{fruit_chosen} Nutrition Information')
+        st.subheader(f"{fruit_chosen} Nutrition Information")
         sf_df = st.dataframe(data = smoothiefroot_response.json(), use_container_width=True)
 
     time_to_insert = st.button('Submit Order')
